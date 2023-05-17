@@ -4,7 +4,7 @@ import whisper
 import os
 import time
 
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication, QMainWindow
 
 
 from src.ui.views.mainPage_ui import *
@@ -12,6 +12,8 @@ from src.scripts.whisperFunctions import *
 from src.scripts.video_manipulation_functions import *
 from src.ui.controllers.ui_functions import *
 
+from src.scripts.threads.InitWhisperThread import *
+from src.scripts.threads.TranscribeAudioThread import *
 
 class MainWindow(QMainWindow, Ui_MainWindow):
 
@@ -34,6 +36,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     
     # Functions
 
+    def start_init_whisper(self):
+        self.load_model_thread = InitWhisperThread(self)
+        self.load_model_thread.start()
+
+
     def browse_files(self):
         fname = QFileDialog.getOpenFileName(self, "Select a File to Transcribe", "F:\EasyTranscriber", 
                                             "Audio (*.mp3);; Video (*.mp4)")
@@ -55,51 +62,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.statusbar.showMessage("Must transcribe a file first")
             return False
     
-    def transcribe_function(self):
-        if self.whisper:
-            url = self.browseUrl.text()
-
-            directory, file_name = url.rsplit('/', 1)
-            name, extension = file_name.split('.', 1)
-
-            # Check if file is a video
-            if extension == "mp4":
-                url = video_to_mp3(url, name)
-
-            # Transcribes Audio
-            self.statusbar.showMessage("Transcription in Progress, Please Wait!")
-            QApplication.processEvents()
-
-            self.curr_transcription = self.whisper.transcribe(url)
-            results = self.whisper.display_transcribed_text(self.curr_transcription)
-
-            self.statusbar.showMessage("Transcription Complete! Populating Display....")
-            QApplication.processEvents()
-            # Displays Audio
-            for line in results:
-                self.displayTranscript.addItem(line)
-            
-            self.statusbar.showMessage("Text Displayed!")
-
-            # Deletes the file at the end if it is an mp4 file converted
-            if extension == "mp4":
-                os.remove(url)
-                pass
-
-        self.statusbar.showMessage("Setup Transcriber First")
-        return False
-
-    def transcribe_audio(self):
-        print("transcribe Audio")
-
-    def transcribe_video(self):
-        print("transcribe Video")
+    def start_transcribe_thread(self):
+        self.load_model_thread = TranscribeAudioThread(self)
+        self.load_model_thread.start()
     
-    def initiate_whisper(self):
-        self.statusbar.showMessage("Initiating Whisper Model....Setting Up Transcriber")
-        QApplication.processEvents()
-        self.whisper = WhisperFunctions()
-        self.statusbar.showMessage("Transcriber Setup! Ready for Use!")
+    
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

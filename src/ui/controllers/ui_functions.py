@@ -12,10 +12,10 @@ class UIFunctions(MainWindow):
         self.browseBtn.clicked.connect(self.browse_files)
 
         # Transcribe Button
-        self.transcribeBtn.clicked.connect(self.transcribe_function)
+        self.transcribeBtn.clicked.connect(self.start_transcribe_thread)
 
         # Setup Button
-        self.setupBtn.clicked.connect(self.initiate_whisper)
+        self.setupBtn.clicked.connect(self.start_init_whisper)
 
         # save Buttons
         self.saveSRTBtn.clicked.connect(self.save_file)

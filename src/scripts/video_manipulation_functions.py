@@ -8,4 +8,4 @@ def video_to_mp3(video, filename, output_ext="mp3"):
     return f"{filename}.{output_ext}"
 
 def delete_video(video):
-    pass
+    os.remove(video)

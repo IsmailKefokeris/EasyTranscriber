@@ -1,0 +1,236 @@
+1
+0:00:00 --> 0:00:08
+ quick demonstration on how to use my computer vision Valorant Map Analyzer software.
+
+2
+0:00:08 --> 0:00:15
+ So when you're in the GitHub page just click on the latest release and you'll be given an option to download the installation.
+
+3
+0:00:15 --> 0:00:19
+ Just click on that and the installation should start straight away.
+
+4
+0:00:19 --> 0:00:26
+ Now once it's open just right click it extract it. It is a zip file so you don't need winrower to extract it.
+
+5
+0:00:26 --> 0:00:30
+ Once it's unextracting just double click the installation file.
+
+6
+0:00:30 --> 0:00:41
+ Follow the instructions provided. Now that the download is finished you have the option to either launch it straight from the installer or you can launch it from the desktop icon or the start menu item.
+
+7
+0:00:41 --> 0:00:46
+ So once you start it will ask for admin privileges should be approved.
+
+8
+0:00:46 --> 0:00:55
+ It takes a while for the application to start up but once it started up it will pop up on your screen where your cursor is.
+
+9
+0:00:55 --> 0:01:00
+ There we go. So now the application has started up we have a few options here.
+
+10
+0:01:00 --> 0:01:06
+ Not much is explained at the moment we do have a prerequisite section but that is empty.
+
+11
+0:01:06 --> 0:01:10
+ So now we'll move over to explaining how to use the application.
+
+12
+0:01:10 --> 0:01:15
+ So to start the tracker very simple just click the start button.
+
+13
+0:01:15 --> 0:01:21
+ It will take a second to start id lesion be clicking anything while you're waiting for it to start.
+
+14
+0:01:21 --> 0:01:26
+ So wait for it to start and once it started it will be running straight away.
+
+15
+0:01:26 --> 0:01:29
+ It will also be making predictions straight away which you won't be able to see.
+
+16
+0:01:29 --> 0:01:37
+ I've just opened up a recording of a game and there we go we just have some players running around.
+
+17
+0:01:37 --> 0:01:45
+ What I can do is I can create a zone to start tracking from and now so I just want to track a site.
+
+18
+0:01:45 --> 0:01:48
+ I set the zone a site to be in track.
+
+19
+0:01:48 --> 0:01:52
+ So of course we don't have any players on the screen so we can do select friendlies.
+
+20
+0:01:52 --> 0:01:55
+ We can't unselect players until we select something else.
+
+21
+0:01:55 --> 0:01:59
+ So now it's tracking that we have three friendlies on a site.
+
+22
+0:01:59 --> 0:02:06
+ We can name the zone through the label tracker over here.
+
+23
+0:02:06 --> 0:02:11
+ There are some extra options haven't been implemented yet so that can be ignored.
+
+24
+0:02:11 --> 0:02:16
+ These are the three sub pages on the main page.
+
+25
+0:02:17 --> 0:02:21
+ So to clear the zone just clear all and you're back to normal.
+
+26
+0:02:21 --> 0:02:37
+ Also as a small FPS counter just in case you want to know how fast it's running and optionally later you can change between different models or you can change between using CPU or GPU.
+
+27
+0:02:37 --> 0:02:42
+ So if I do that again, put players as well.
+
+28
+0:02:43 --> 0:02:47
+ So if we move over to the menu, just stop this for now.
+
+29
+0:02:47 --> 0:02:52
+ We move to account page we can see that we can implement our accounts page.
+
+30
+0:02:52 --> 0:02:56
+ There are only two editable tags.
+
+31
+0:02:56 --> 0:02:59
+ Line edits is the username and tagline.
+
+32
+0:02:59 --> 0:03:05
+ So this is where you put your username and your tagline for your account.
+
+33
+0:03:05 --> 0:03:07
+ This will be saved on your computer.
+
+34
+0:03:08 --> 0:03:14
+ So every time you reload the app it will load with the app.
+
+35
+0:03:14 --> 0:03:17
+ Okay.
+
+36
+0:03:17 --> 0:03:23
+ Next we have a Smith bug page so this allows you to submit bug report feature requests or performance issue.
+
+37
+0:03:23 --> 0:03:29
+ You can submit your real email or you can put fake email if you don't want any replies.
+
+38
+0:03:29 --> 0:03:35
+ Later down the line will implement a no reply email so you don't have to submit your email.
+
+39
+0:03:35 --> 0:03:38
+ But it's good in this case.
+
+40
+0:03:38 --> 0:03:44
+ You can submit a bug report, feature report, performance report through this page.
+
+41
+0:03:44 --> 0:03:51
+ So the final thing at the bottom here, this controls what is being seen here.
+
+42
+0:03:51 --> 0:03:54
+ So if I started it again, I clear all the zones.
+
+43
+0:03:54 --> 0:04:01
+ We can change this to 340, it stretches it out, 350 or something.
+
+44
+0:04:01 --> 0:04:09
+ Now we just have more of the map so it's easier to select the zones of the map.
+
+45
+0:04:09 --> 0:04:15
+ So that's zone 1, A and zone B. You see?
+
+46
+0:04:15 --> 0:04:19
+ And also the spawn.
+
+47
+0:04:19 --> 0:04:22
+ So it allows you to be more precise with your selections.
+
+48
+0:04:22 --> 0:04:24
+ That's what this section does.
+
+49
+0:04:24 --> 0:04:28
+ This section has a little bug causing it to do that.
+
+50
+0:04:28 --> 0:04:35
+ But to fix that you just go plus or minus like one or two values and it should fix.
+
+51
+0:04:35 --> 0:04:41
+ Before I forget, the final feature is implemented is a hide feature.
+
+52
+0:04:41 --> 0:04:49
+ So it allows the application to be hidden and shown in case you just have one monitor on the screen.
+
+53
+0:04:49 --> 0:04:53
+ And finally to uninstall the application it's very simple.
+
+54
+0:04:53 --> 0:04:56
+ You just go to where you installed the application.
+
+55
+0:04:56 --> 0:05:00
+ Mine was disk c, program files cvfvma.
+
+56
+0:05:00 --> 0:05:03
+ Double click the uninstall file.
+
+57
+0:05:03 --> 0:05:06
+ Do I want to click completely remove?
+
+58
+0:05:06 --> 0:05:07
+ Yes.
+
+59
+0:05:07 --> 0:05:11
+ And it will finish on installing.
+
