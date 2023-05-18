@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>802</width>
-    <height>616</height>
+    <width>800</width>
+    <height>620</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>620</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>620</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -49,6 +61,12 @@
       <height>401</height>
      </rect>
     </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::DoubleClicked</set>
+    </property>
+    <property name="isWrapping" stdset="0">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="transcribeBtn">
     <property name="geometry">
@@ -66,27 +84,14 @@
    <widget class="QPushButton" name="saveSRTBtn">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>694</x>
       <y>530</y>
-      <width>75</width>
+      <width>91</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>Save as srt</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="saveTXTBtn">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>530</y>
-      <width>75</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Save as txt</string>
+     <string>Save Subtitle</string>
     </property>
    </widget>
    <widget class="QPushButton" name="setupBtn">
@@ -108,7 +113,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>802</width>
+     <width>800</width>
      <height>22</height>
     </rect>
    </property>

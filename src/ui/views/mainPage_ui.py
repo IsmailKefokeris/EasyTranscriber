@@ -15,15 +15,17 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLineEdit, QListWidget, QListWidgetItem,
-    QMainWindow, QMenuBar, QPushButton, QSizePolicy,
-    QStatusBar, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QLineEdit, QListWidget,
+    QListWidgetItem, QMainWindow, QMenuBar, QPushButton,
+    QSizePolicy, QStatusBar, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(802, 616)
+        MainWindow.resize(800, 620)
+        MainWindow.setMinimumSize(QSize(800, 620))
+        MainWindow.setMaximumSize(QSize(800, 620))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.browseUrl = QLineEdit(self.centralwidget)
@@ -36,22 +38,21 @@ class Ui_MainWindow(object):
         self.displayTranscript = QListWidget(self.centralwidget)
         self.displayTranscript.setObjectName(u"displayTranscript")
         self.displayTranscript.setGeometry(QRect(10, 120, 771, 401))
+        self.displayTranscript.setEditTriggers(QAbstractItemView.DoubleClicked)
+        self.displayTranscript.setProperty("isWrapping", False)
         self.transcribeBtn = QPushButton(self.centralwidget)
         self.transcribeBtn.setObjectName(u"transcribeBtn")
         self.transcribeBtn.setGeometry(QRect(710, 40, 75, 24))
         self.saveSRTBtn = QPushButton(self.centralwidget)
         self.saveSRTBtn.setObjectName(u"saveSRTBtn")
-        self.saveSRTBtn.setGeometry(QRect(710, 530, 75, 24))
-        self.saveTXTBtn = QPushButton(self.centralwidget)
-        self.saveTXTBtn.setObjectName(u"saveTXTBtn")
-        self.saveTXTBtn.setGeometry(QRect(630, 530, 75, 24))
+        self.saveSRTBtn.setGeometry(QRect(694, 530, 91, 24))
         self.setupBtn = QPushButton(self.centralwidget)
         self.setupBtn.setObjectName(u"setupBtn")
         self.setupBtn.setGeometry(QRect(10, 10, 121, 24))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 802, 22))
+        self.menubar.setGeometry(QRect(0, 0, 800, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -66,8 +67,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.browseBtn.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
         self.transcribeBtn.setText(QCoreApplication.translate("MainWindow", u"Transcribe", None))
-        self.saveSRTBtn.setText(QCoreApplication.translate("MainWindow", u"Save as srt", None))
-        self.saveTXTBtn.setText(QCoreApplication.translate("MainWindow", u"Save as txt", None))
+        self.saveSRTBtn.setText(QCoreApplication.translate("MainWindow", u"Save Subtitle", None))
         self.setupBtn.setText(QCoreApplication.translate("MainWindow", u"Setup Transcriber", None))
     # retranslateUi
 

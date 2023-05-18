@@ -1,8 +1,8 @@
 import os
 from typing import Optional
 from PySide6 import QtCore, QtWidgets, QtGui
-from PySide6.QtCore import QThread
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtCore import QThread, Qt
+from PySide6.QtWidgets import QApplication, QMainWindow, QListWidgetItem
 import time
 import whisper
 
@@ -37,13 +37,25 @@ class TranscribeAudioThread(QThread):
             QApplication.processEvents()
 
             self.parent.curr_transcription = self.parent.whisper.transcribe(url)
-            results = self.parent.whisper.display_transcribed_text(self.parent.curr_transcription)
+            self.parent.transcribed = self.parent.whisper.display_transcribed_text(self.parent.curr_transcription)
 
             self.parent.statusbar.showMessage("Transcription Complete! Populating Display....")
             QApplication.processEvents()
+
             # Displays Audio
-            for line in results:
-                self.parent.displayTranscript.addItem(line)
+            if self.parent.transcribed:
+                for i, line in enumerate(self.parent.transcribed, start=1):
+                    item_index = QListWidgetItem(f"{i}")
+                    item_time = QListWidgetItem(f"{line[0]} --> {line[1]}")
+                    item_text = QListWidgetItem(f"{line[2]}")
+
+                    flags = Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsUserCheckable | Qt.ItemFlag.ItemIsEditable | Qt.ItemFlag.ItemIsSelectable
+
+                    item_text.setFlags(flags)
+
+                    self.parent.displayTranscript.addItem(item_index)
+                    self.parent.displayTranscript.addItem(item_time)
+                    self.parent.displayTranscript.addItem(item_text)
             
             self.parent.statusbar.showMessage("Text Displayed!")
 

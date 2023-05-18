@@ -13,13 +13,15 @@ class UIFunctions(MainWindow):
 
         # Transcribe Button
         self.transcribeBtn.clicked.connect(self.start_transcribe_thread)
+        self.transcribeBtn.setEnabled(False)
+
 
         # Setup Button
         self.setupBtn.clicked.connect(self.start_init_whisper)
 
         # save Buttons
         self.saveSRTBtn.clicked.connect(self.save_file)
-        # self.saveTXTBtn.clicked.connect()
+        
 
 
     

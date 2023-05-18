@@ -1,4 +1,5 @@
 import whisper
+from whisper.utils import WriteSRT
 import datetime
 
 
@@ -24,19 +25,39 @@ class WhisperFunctions():
         for segment in transcribed["segments"]:
             start = datetime.timedelta(seconds=segment["start"])
             end = datetime.timedelta(seconds=segment["end"])
-            text.append(f"{start},:,{end}, - , {segment['text']}")
+            main_body = segment['text']
+            # text.append(f"{start},:,{end}, - , {segment['text']}")
+            text.append([start, end, main_body])
         
         return text
-    
+
     def save_as_srt(self, transcribed, file_path):
         with open(file_path, "w") as file:
-            for i, segment in enumerate(transcribed["segments"], start=1):
-                start = datetime.timedelta(seconds=segment["start"])
-                end = datetime.timedelta(seconds=segment["end"])
-                text = segment["text"]
+            cnt = 0
+            for index in range(transcribed.count()):
+                item = transcribed.item(index).text()
 
-                file.write(f"{i}\n")
-                file.write(f"{start} --> {end}\n")
-                file.write(f"{text}\n\n")
+                if cnt == 0:
+                    # Index
+                    file.write(f"{item}\n")
+                    cnt+=1
+                elif cnt == 1:
+                    # Time
+                    file.write(f"{item}\n")
+                    cnt+=1
+                elif cnt == 2:
+                    # Text
+                    file.write(f"{item}\n\n")
+                    cnt = 0
+
+            # for i, line in enumerate(transcribed, start=1):
+            #     start = line[0]
+            #     end = line[1]
+            #     text = line[2]
+
+            #     file.write(f"{i}\n")
+            #     file.write(f"{start} --> {end}\n")
+            #     file.write(f"{text}\n\n")
         
         print(f"Transcribed text file saved as .srt to: {file_path}")
+
