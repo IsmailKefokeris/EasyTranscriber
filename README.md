@@ -23,9 +23,9 @@ To run the Transcriber Software, follow these steps:
 1. Install the required dependencies:
 
     - Python (version X.X.X)
-    - PySide6 (installation instructions: [link])
-    - Whisper library (installation instructions: [link])
-    - FFmpeg (installation instructions: [link])
+    - PySide6
+    - Whisper library
+    - FFmpeg
 
 2. Clone the project repository:
     ```bash
