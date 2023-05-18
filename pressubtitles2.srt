@@ -1,6 +1,6 @@
 1
 0:00:00 --> 0:00:08
-Quick demonstration on how to use my computer vision Valorant Map Analyzer Software.
+ quick demonstration on how to use my computer vision Valorant Map Analyzer software.
 
 2
 0:00:08 --> 0:00:15
@@ -232,5 +232,5 @@ Quick demonstration on how to use my computer vision Valorant Map Analyzer Softw
 
 59
 0:05:07 --> 0:05:11
-And it will finish on installing.
+ And it will finish on installing.
 

@@ -1,10 +1,13 @@
 import datetime
 import sys
+
 import whisper
+# Move over to https://github.com/guillaumekln/faster-whisper (faster)
+
 import os
 import time
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog
+from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QSplashScreen
 
 
 from src.ui.views.mainPage_ui import *
@@ -25,6 +28,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # Set Window Title
         self.setWindowTitle("Transcribing Tool")
+
+        # Icon
+        my_icon = QIcon()
+        my_icon.addFile(r"src\assets\images\Icon\EasyTranscriberIcon.ico")
+
+        self.setWindowIcon(my_icon)
 
         # setup Whisper
         self.whisper = None
@@ -77,8 +86,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
+    pixmap = QPixmap(r"src\assets\images\SplashScreen.PNG")
+    splash = QSplashScreen(pixmap)
+    splash.show()
+
+    splash.showMessage("Loading Main Window...", color="white")
+    app.processEvents()
+
     window = MainWindow()
 
     window.show()
+
+    splash.finish(window)
 
     app.exec()
