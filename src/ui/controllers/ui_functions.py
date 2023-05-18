@@ -1,7 +1,7 @@
 from PySide6 import QtWidgets
 from PySide6.QtWidgets import QDialog, QApplication, QFileDialog
 
-from main import *
+from main import MainWindow
 
 
 class UIFunctions(MainWindow):
