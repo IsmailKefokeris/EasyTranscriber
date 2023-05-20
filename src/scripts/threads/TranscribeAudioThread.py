@@ -73,4 +73,4 @@ class TranscribeAudioThread(QThread):
         return False
     
     def stop(self):
-        pass
+        self.terminate()

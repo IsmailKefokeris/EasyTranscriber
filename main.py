@@ -1,4 +1,5 @@
 # AI Imports (Whisper)
+import PySide6.QtGui
 import torch
 import whisper
 # Move over to https://github.com/guillaumekln/faster-whisper (faster)
@@ -81,6 +82,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def start_transcribe_thread(self):
         self.load_model_thread = TranscribeAudioThread(self)
         self.load_model_thread.start()
+    
+    def closeEvent(self, event):
+        # Stopping all threads
+        self.load_model_thread.stop()
+        self.load_model_thread.stop()
+
+        # Closes Window 
+        event.accept()
+
 
     
     
