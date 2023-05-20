@@ -1,5 +1,5 @@
 # PySide6 Functions Import
-from PySide6.QtCore import QThread
+from PySide6.QtCore import QThread, QCoreApplication
 from PySide6.QtWidgets import QApplication, QMainWindow
 
 # Addtional Scripts Import
@@ -18,6 +18,7 @@ class InitWhisperThread(QThread):
     def run(self):
         self.parent.statusbar.showMessage("Initiating Whisper Model....Setting Up Transcriber")
         self.parent.whisper = FasterWhisperFunctions(self.model)
+        QCoreApplication.processEvents() 
         self.parent.statusbar.showMessage("Transcriber Setup! Ready for Use!")
         self.parent.transcribeBtn.setEnabled(True)
 

@@ -15,9 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QLineEdit,
-    QListWidget, QListWidgetItem, QMainWindow, QMenuBar,
-    QPushButton, QSizePolicy, QStatusBar, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QLabel,
+    QLineEdit, QListWidget, QListWidgetItem, QMainWindow,
+    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -58,6 +59,15 @@ class Ui_MainWindow(object):
         self.modelChosen.addItem("")
         self.modelChosen.setObjectName(u"modelChosen")
         self.modelChosen.setGeometry(QRect(10, 10, 171, 22))
+        self.loadingLabel = QLabel(self.centralwidget)
+        self.loadingLabel.setObjectName(u"loadingLabel")
+        self.loadingLabel.setGeometry(QRect(730, 70, 50, 40))
+        self.loadingLabel.setMinimumSize(QSize(50, 40))
+        self.loadingLabel.setMaximumSize(QSize(50, 40))
+        self.loadingLabel.setScaledContents(True)
+        self.infoLabel = QLabel(self.centralwidget)
+        self.infoLabel.setObjectName(u"infoLabel")
+        self.infoLabel.setGeometry(QRect(8, 100, 241, 20))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -88,5 +98,7 @@ class Ui_MainWindow(object):
         self.modelChosen.setItemText(4, QCoreApplication.translate("MainWindow", u"Large - Slowest Processing", None))
         self.modelChosen.setItemText(5, QCoreApplication.translate("MainWindow", u"Large-v2 - Newest", None))
 
+        self.loadingLabel.setText("")
+        self.infoLabel.setText("")
     # retranslateUi
 

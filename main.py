@@ -80,9 +80,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     
     # Function to start Transcribing through a thread
     def start_transcribe_thread(self):
-        self.load_model_thread = TranscribeAudioThread(self)
-        self.load_model_thread.start()
+        if self.whisper:
+            # Create and show loading animation
+            self.loading_animation()
+
+            self.load_model_thread = TranscribeAudioThread(self)
+            self.load_model_thread.start()
+            
+        self.statusbar.showMessage("Setup Transcriber First")
+        return False
+
     
+    def loading_animation(self, state = "start"):
+        if state == "start":
+            self.loading_movie = QMovie(r"src\assets\images\gif\Iphone-spinner-2.gif")
+            self.loadingLabel.setMovie(self.loading_movie)
+            self.loading_movie.start()
+            return True
+        
+        self.loading_movie.stop()
+        self.loadingLabel.setMovie(None)
+        self.loadingLabel = None
+        return True
+
     def closeEvent(self, event):
         # Stopping all threads
         self.load_model_thread.stop()
