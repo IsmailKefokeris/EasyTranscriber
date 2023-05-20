@@ -4,6 +4,7 @@ import whisper
 # Move over to https://github.com/guillaumekln/faster-whisper (faster)
 
 # GUI Elements from PySide6
+import time
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QSplashScreen
 
@@ -49,9 +50,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     # Function to setup Whisper
     def start_init_whisper(self):
-        self.load_model_thread = InitWhisperThread(self)
+        model = self.modelChosen.currentIndex()
+        self.load_model_thread = InitWhisperThread(model, self)
         self.load_model_thread.start()
-        self.transcribeBtn.setEnabled(True)
 
     # Function to Allowing Browsing of Computer files
     def browse_files(self):

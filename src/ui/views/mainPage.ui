@@ -97,15 +97,58 @@
    <widget class="QPushButton" name="setupBtn">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>121</width>
+      <x>30</x>
+      <y>40</y>
+      <width>131</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
      <string>Setup Transcriber</string>
     </property>
+   </widget>
+   <widget class="QComboBox" name="modelChosen">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>171</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>Tiny - Fastest Processing</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Base - Best Option</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Small</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Medium</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Large - Slowest Processing</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Large-v2 - Newest</string>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

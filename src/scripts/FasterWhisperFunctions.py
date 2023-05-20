@@ -1,37 +1,34 @@
-import whisper
+from faster_whisper import WhisperModel
 import torch
 from whisper.utils import WriteSRT
 import datetime
 
 
-class WhisperFunctions():
+class FasterWhisperFunctions():
     def __init__(self, model):
         torch.cuda.is_available()
         DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
         MODELS = ["tiny", "base", "small", "medium", "large-v1", "large-v2",]
 
-        self.model = whisper.load_model(MODELS[model], device=DEVICE)
+        self.model = WhisperModel(MODELS[model], device=DEVICE, compute_type="float32")
+
 
     def transcribe(self, audio_url):
-        results = self.model.transcribe(audio_url)
+        segments, info = self.model.transcribe(audio_url, beam_size=5)
 
-        for key, val in results.items():
-            print(key)
-
-        return results
+        return segments, info
+    
     
     def display_transcribed_text(self, transcribed, print_text=False):
         text = []
-        if print_text:
-            for segment in transcribed["segments"]:
-                print(datetime.timedelta(seconds=segment["start"]),":",datetime.timedelta(seconds=segment["end"])," - ", segment["text"])
-            return
         
-        for segment in transcribed["segments"]:
-            start = datetime.timedelta(seconds=segment["start"])
-            end = datetime.timedelta(seconds=segment["end"])
-            main_body = segment['text']
+        for segment in transcribed:
+            start = datetime.timedelta(seconds=int(segment.start))
+            
+            end = datetime.timedelta(seconds=int(segment.end))
+
+            main_body = segment.text
             # text.append(f"{start},:,{end}, - , {segment['text']}")
             text.append([start, end, main_body])
         
@@ -56,14 +53,5 @@ class WhisperFunctions():
                     file.write(f"{item}\n\n")
                     cnt = 0
 
-            # for i, line in enumerate(transcribed, start=1):
-            #     start = line[0]
-            #     end = line[1]
-            #     text = line[2]
-
-            #     file.write(f"{i}\n")
-            #     file.write(f"{start} --> {end}\n")
-            #     file.write(f"{text}\n\n")
-        
         print(f"Transcribed text file saved as .srt to: {file_path}")
 

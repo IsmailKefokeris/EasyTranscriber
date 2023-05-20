@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QLineEdit, QListWidget,
-    QListWidgetItem, QMainWindow, QMenuBar, QPushButton,
-    QSizePolicy, QStatusBar, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QLineEdit,
+    QListWidget, QListWidgetItem, QMainWindow, QMenuBar,
+    QPushButton, QSizePolicy, QStatusBar, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -48,7 +48,16 @@ class Ui_MainWindow(object):
         self.saveSRTBtn.setGeometry(QRect(694, 530, 91, 24))
         self.setupBtn = QPushButton(self.centralwidget)
         self.setupBtn.setObjectName(u"setupBtn")
-        self.setupBtn.setGeometry(QRect(10, 10, 121, 24))
+        self.setupBtn.setGeometry(QRect(30, 40, 131, 24))
+        self.modelChosen = QComboBox(self.centralwidget)
+        self.modelChosen.addItem("")
+        self.modelChosen.addItem("")
+        self.modelChosen.addItem("")
+        self.modelChosen.addItem("")
+        self.modelChosen.addItem("")
+        self.modelChosen.addItem("")
+        self.modelChosen.setObjectName(u"modelChosen")
+        self.modelChosen.setGeometry(QRect(10, 10, 171, 22))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -60,6 +69,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
+        self.modelChosen.setCurrentIndex(1)
+
+
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
@@ -69,5 +81,12 @@ class Ui_MainWindow(object):
         self.transcribeBtn.setText(QCoreApplication.translate("MainWindow", u"Transcribe", None))
         self.saveSRTBtn.setText(QCoreApplication.translate("MainWindow", u"Save Subtitle", None))
         self.setupBtn.setText(QCoreApplication.translate("MainWindow", u"Setup Transcriber", None))
+        self.modelChosen.setItemText(0, QCoreApplication.translate("MainWindow", u"Tiny - Fastest Processing", None))
+        self.modelChosen.setItemText(1, QCoreApplication.translate("MainWindow", u"Base - Best Option", None))
+        self.modelChosen.setItemText(2, QCoreApplication.translate("MainWindow", u"Small", None))
+        self.modelChosen.setItemText(3, QCoreApplication.translate("MainWindow", u"Medium", None))
+        self.modelChosen.setItemText(4, QCoreApplication.translate("MainWindow", u"Large - Slowest Processing", None))
+        self.modelChosen.setItemText(5, QCoreApplication.translate("MainWindow", u"Large-v2 - Newest", None))
+
     # retranslateUi
 

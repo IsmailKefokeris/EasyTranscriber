@@ -1,236 +1,216 @@
 1
-0:00:00 --> 0:00:08
- quick demonstration on how to use my computer vision Valorant Map Analyzer software.
+0:00:00 --> 0:00:06,880000
+ Quick demonstration on how to use my Computer Vision Valorant Map Analyzer
 
 2
-0:00:08 --> 0:00:15
- So when you're in the GitHub page just click on the latest release and you'll be given an option to download the installation.
+0:00:06,880000 --> 0:00:11,520000
+ software. So when you're in the GitHub page just click on the latest release
 
 3
-0:00:15 --> 0:00:19
- Just click on that and the installation should start straight away.
+0:00:11,520000 --> 0:00:15,640000
+ and you'll be given an option to download the installation. Just click on
 
 4
-0:00:19 --> 0:00:26
- Now once it's open just right click it extract it. It is a zip file so you don't need winrower to extract it.
+0:00:15,640000 --> 0:00:21,200000
+ that and the installation should start straight away. Now once it's open just
 
 5
-0:00:26 --> 0:00:30
- Once it's unextracting just double click the installation file.
+0:00:21,200000 --> 0:00:25,760000
+ right-click it, extract it. It is a zip file so you don't need WinRAR to
 
 6
-0:00:30 --> 0:00:41
- Follow the instructions provided. Now that the download is finished you have the option to either launch it straight from the installer or you can launch it from the desktop icon or the start menu item.
+0:00:25,760000 --> 0:00:29,880000
+ extract it. Once it's done extracting just double-click the installation file
 
 7
-0:00:41 --> 0:00:46
- So once you start it will ask for admin privileges should be approved.
+0:00:29,880000 --> 0:00:35,240000
+ follow the instructions provided. Now that the download is finished you have
 
 8
-0:00:46 --> 0:00:55
- It takes a while for the application to start up but once it started up it will pop up on your screen where your cursor is.
+0:00:35,240000 --> 0:00:38,120000
+ the option to either launch it straight from the installer or you can launch it
 
 9
-0:00:55 --> 0:01:00
- There we go. So now the application has started up we have a few options here.
+0:00:38,120000 --> 0:00:43,120000
+ from the desktop icon or the start menu item. So once you start it will ask for
 
 10
-0:01:00 --> 0:01:06
- Not much is explained at the moment we do have a prerequisite section but that is empty.
+0:00:43,120000 --> 0:00:47,800000
+ admin privileges should be approved. It takes a while for the application to
 
 11
-0:01:06 --> 0:01:10
- So now we'll move over to explaining how to use the application.
+0:00:47,800000 --> 0:00:55,160000
+ start up but once it's started up it will pop up on your screen where your
 
 12
-0:01:10 --> 0:01:15
- So to start the tracker very simple just click the start button.
+0:00:55,160000 --> 0:00:59,240000
+ cursor is. There we go. So now the application has started up we have a
 
 13
-0:01:15 --> 0:01:21
- It will take a second to start id lesion be clicking anything while you're waiting for it to start.
+0:00:59,240000 --> 0:01:03,320000
+ few options here. Not much is explained at the moment we do have a prerequisites
 
 14
-0:01:21 --> 0:01:26
- So wait for it to start and once it started it will be running straight away.
+0:01:03,320000 --> 0:01:09,720000
+ section but that is empty. So now we'll move over to explaining how to use the
 
 15
-0:01:26 --> 0:01:29
- It will also be making predictions straight away which you won't be able to see.
+0:01:09,720000 --> 0:01:15,600000
+ application. So to start the tracker very simple you just click the start button
 
 16
-0:01:29 --> 0:01:37
- I've just opened up a recording of a game and there we go we just have some players running around.
+0:01:15,600000 --> 0:01:20,240000
+ it'll take a second to start. Ideally you shouldn't be clicking anything while
 
 17
-0:01:37 --> 0:01:45
- What I can do is I can create a zone to start tracking from and now so I just want to track a site.
+0:01:20,240000 --> 0:01:24,640000
+ you're waiting for it to start. Just wait for it to start and once it's started it
 
 18
-0:01:45 --> 0:01:48
- I set the zone a site to be in track.
+0:01:24,640000 --> 0:01:27,560000
+ will be running straight away. We'll also be making predictions straight away
 
 19
-0:01:48 --> 0:01:52
- So of course we don't have any players on the screen so we can do select friendlies.
+0:01:27,560000 --> 0:01:32,920000
+ which you won't be able to see. I've just opened up a recording of a game and
 
 20
-0:01:52 --> 0:01:55
- We can't unselect players until we select something else.
+0:01:32,920000 --> 0:01:39
+ there we go we just have some players running around. What I can do is I can
 
 21
-0:01:55 --> 0:01:59
- So now it's tracking that we have three friendlies on a site.
+0:01:39 --> 0:01:45,640000
+ create a zone to start tracking from and now so I just want to track a site I set
 
 22
-0:01:59 --> 0:02:06
- We can name the zone through the label tracker over here.
+0:01:45,640000 --> 0:01:49,760000
+ the zone a sites being tracked. So of course we don't have any players on the
 
 23
-0:02:06 --> 0:02:11
- There are some extra options haven't been implemented yet so that can be ignored.
+0:01:49,760000 --> 0:01:53,480000
+ screen so we can do a select friendlies we can't unselect players until we
 
 24
-0:02:11 --> 0:02:16
- These are the three sub pages on the main page.
+0:01:53,480000 --> 0:01:56,640000
+ select something else. So friendlies all right so now it's tracking that we have
 
 25
-0:02:17 --> 0:02:21
- So to clear the zone just clear all and you're back to normal.
+0:01:56,640000 --> 0:02:04,360000
+ three friendlies on a site. We can name the zone through the label tracker over
 
 26
-0:02:21 --> 0:02:37
- Also as a small FPS counter just in case you want to know how fast it's running and optionally later you can change between different models or you can change between using CPU or GPU.
+0:02:04,360000 --> 0:02:10,840000
+ here. There are some extra options haven't been implemented yet so that can
 
 27
-0:02:37 --> 0:02:42
- So if I do that again, put players as well.
+0:02:10,840000 --> 0:02:17,840000
+ be ignored. These are the three sub pages on the main page. So to clear the zones
 
 28
-0:02:43 --> 0:02:47
- So if we move over to the menu, just stop this for now.
+0:02:17,840000 --> 0:02:23,720000
+ just clear all and you're back to normal. It also has a small FPS counter just in
 
 29
-0:02:47 --> 0:02:52
- We move to account page we can see that we can implement our accounts page.
+0:02:23,720000 --> 0:02:30,200000
+ case you want to know how fast it's running and optionally later you could
 
 30
-0:02:52 --> 0:02:56
- There are only two editable tags.
+0:02:30,200000 --> 0:02:37,880000
+ change between different models or you can change between using a CPU or GPU. So
 
 31
-0:02:56 --> 0:02:59
- Line edits is the username and tagline.
+0:02:37,880000 --> 0:02:44,520000
+ if I do that again put players as well there we go. Okay so if we move over to
 
 32
-0:02:59 --> 0:03:05
- So this is where you put your username and your tagline for your account.
+0:02:44,600000 --> 0:02:49,960000
+ the menu just stop this for now and we move over to account page we can see
 
 33
-0:03:05 --> 0:03:07
- This will be saved on your computer.
+0:02:49,960000 --> 0:02:57,760000
+ that we can implement our accounts page. The only two editable tags, line edits is
 
 34
-0:03:08 --> 0:03:14
- So every time you reload the app it will load with the app.
+0:02:57,760000 --> 0:03:01,400000
+ the username and tagline. So this is where you put your username and your
 
 35
-0:03:14 --> 0:03:17
- Okay.
+0:03:01,400000 --> 0:03:08,320000
+ tagline for your account. This will be saved on your computer so every time you
 
 36
-0:03:17 --> 0:03:23
- Next we have a Smith bug page so this allows you to submit bug report feature requests or performance issue.
+0:03:08,320000 --> 0:03:19
+ reload the app it will load with the app. Okay next we have a submit bug page so
 
 37
-0:03:23 --> 0:03:29
- You can submit your real email or you can put fake email if you don't want any replies.
+0:03:19 --> 0:03:22,680000
+ this allows you to submit a bug report, feature requests or performance issue.
 
 38
-0:03:29 --> 0:03:35
- Later down the line will implement a no reply email so you don't have to submit your email.
+0:03:22,680000 --> 0:03:28,240000
+ You can submit your real email or you can put fake email if you don't want any
 
 39
-0:03:35 --> 0:03:38
- But it's good in this case.
+0:03:28,240000 --> 0:03:33,280000
+ replies. Later down the line we'll implement a no reply email so you
 
 40
-0:03:38 --> 0:03:44
- You can submit a bug report, feature report, performance report through this page.
+0:03:33,280000 --> 0:03:38,520000
+ don't have to submit your email but it's like it's good in this case. Anyway
 
 41
-0:03:44 --> 0:03:51
- So the final thing at the bottom here, this controls what is being seen here.
+0:03:38,520000 --> 0:03:42,080000
+ you can submit a bug report, feature report, performance report through this
 
 42
-0:03:51 --> 0:03:54
- So if I started it again, I clear all the zones.
+0:03:42,080000 --> 0:03:50,080000
+ page. Yeah so the final thing at the bottom here this controls what is being
 
 43
-0:03:54 --> 0:04:01
- We can change this to 340, it stretches it out, 350 or something.
+0:03:50,080000 --> 0:03:55,240000
+ seen here so if I started it up again I clear all the zones. We can change this
 
 44
-0:04:01 --> 0:04:09
- Now we just have more of the map so it's easier to select the zones of the map.
+0:03:55,240000 --> 0:04:02,240000
+ to 340 it stretches it out 350 or something. Now we just have more of the
 
 45
-0:04:09 --> 0:04:15
- So that's zone 1, A and zone B. You see?
+0:04:02,240000 --> 0:04:12,880000
+ map so it's easier to select the zones of the map. So that's zone 1A and zone B
 
 46
-0:04:15 --> 0:04:19
- And also the spawn.
+0:04:12,880000 --> 0:04:21,160000
+ you see and also the spawn. So it allows you to be more precise with your
 
 47
-0:04:19 --> 0:04:22
- So it allows you to be more precise with your selections.
+0:04:21,160000 --> 0:04:26,680000
+ selections. That's what this section does. This section can has a little bug
 
 48
-0:04:22 --> 0:04:24
- That's what this section does.
+0:04:26,680000 --> 0:04:32
+ causing it to do that but to fix that you just go plus or minus like one or
 
 49
-0:04:24 --> 0:04:28
- This section has a little bug causing it to do that.
+0:04:32 --> 0:04:38,240000
+ two values and it should fix. Before I forget the final feature that's
 
 50
-0:04:28 --> 0:04:35
- But to fix that you just go plus or minus like one or two values and it should fix.
+0:04:38,240000 --> 0:04:43,720000
+ implemented is a hide feature so it allows the application to be hidden and
 
 51
-0:04:35 --> 0:04:41
- Before I forget, the final feature is implemented is a hide feature.
+0:04:43,720000 --> 0:04:51,160000
+ shown in case you just have one monitor on the screen. And finally to uninstall
 
 52
-0:04:41 --> 0:04:49
- So it allows the application to be hidden and shown in case you just have one monitor on the screen.
+0:04:51,160000 --> 0:04:54,600000
+ the application it's very simple. You just go to where you installed the
 
 53
-0:04:49 --> 0:04:53
- And finally to uninstall the application it's very simple.
+0:04:54,600000 --> 0:05:01,440000
+ application and mine was disk C program files CVFVMA. Double click the
 
 54
-0:04:53 --> 0:04:56
- You just go to where you installed the application.
-
-55
-0:04:56 --> 0:05:00
- Mine was disk c, program files cvfvma.
-
-56
-0:05:00 --> 0:05:03
- Double click the uninstall file.
-
-57
-0:05:03 --> 0:05:06
- Do I want to click completely remove?
-
-58
-0:05:06 --> 0:05:07
- Yes.
-
-59
-0:05:07 --> 0:05:11
- And it will finish on installing.
+0:05:01,440000 --> 0:05:10,520000
+ uninstall file. Do I want to completely remove? Yes. And it will finish uninstalling.
 

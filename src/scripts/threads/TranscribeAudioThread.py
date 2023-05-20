@@ -3,7 +3,7 @@
 import os
 
 # PySide6 Functions Import
-from PySide6.QtCore import QThread, Qt
+from PySide6.QtCore import QThread, Qt, Signal
 from PySide6.QtWidgets import QApplication, QMainWindow, QListWidgetItem
 
 # Additional Scripts Import
@@ -36,11 +36,14 @@ class TranscribeAudioThread(QThread):
             self.parent.statusbar.showMessage("Transcription in Progress, Please Wait!")
             QApplication.processEvents()
 
-            self.parent.curr_transcription = self.parent.whisper.transcribe(url)
+            self.parent.curr_transcription, info = self.parent.whisper.transcribe(url)
             self.parent.transcribed = self.parent.whisper.display_transcribed_text(self.parent.curr_transcription)
 
             self.parent.statusbar.showMessage("Transcription Complete! Populating Display....")
             QApplication.processEvents()
+
+            # Clear all previous Items if any
+            self.parent.displayTranscript.clear()
 
             # Displays Audio
             if self.parent.transcribed:
