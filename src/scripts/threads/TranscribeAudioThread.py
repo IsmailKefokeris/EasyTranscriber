@@ -1,12 +1,12 @@
+
+# Import Operation System Module
 import os
-from typing import Optional
-from PySide6 import QtCore, QtWidgets, QtGui
+
+# PySide6 Functions Import
 from PySide6.QtCore import QThread, Qt
 from PySide6.QtWidgets import QApplication, QMainWindow, QListWidgetItem
-import time
-import whisper
 
-
+# Additional Scripts Import
 from src.scripts.video_manipulation_functions import *
 from src.scripts.whisperFunctions import *
 

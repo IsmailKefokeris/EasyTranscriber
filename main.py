@@ -1,22 +1,23 @@
-import datetime
-import sys
-
+# AI Imports (Whisper)
+import torch
 import whisper
 # Move over to https://github.com/guillaumekln/faster-whisper (faster)
 
-import os
-import time
-
+# GUI Elements from PySide6
+import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QSplashScreen
 
-
+# Views Imports
 from src.ui.views.mainPage_ui import *
+
+# Extra Scripts Import
 from src.scripts.whisperFunctions import *
 from src.scripts.video_manipulation_functions import *
-from src.ui.controllers.ui_functions import *
-
 from src.scripts.threads.InitWhisperThread import *
 from src.scripts.threads.TranscribeAudioThread import *
+
+# Controller Import
+from src.ui.controllers.ui_functions import *
 
 class MainWindow(QMainWindow, Ui_MainWindow):
 

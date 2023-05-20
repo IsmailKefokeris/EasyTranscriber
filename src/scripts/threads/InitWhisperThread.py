@@ -1,10 +1,8 @@
-from typing import Optional
-from PySide6 import QtCore, QtWidgets, QtGui
+# PySide6 Functions Import
 from PySide6.QtCore import QThread
 from PySide6.QtWidgets import QApplication, QMainWindow
-import time
-import whisper
 
+# Addtional Scripts Import
 from src.scripts.whisperFunctions import *
 
 

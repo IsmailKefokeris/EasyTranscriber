@@ -1,11 +1,15 @@
 import whisper
+import torch
 from whisper.utils import WriteSRT
 import datetime
 
 
 class WhisperFunctions():
     def __init__(self):
-        self.model = whisper.load_model("base")
+        torch.cuda.is_available()
+        DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+
+        self.model = whisper.load_model("base", device=DEVICE)
 
     def transcribe(self, audio_url):
         results = self.model.transcribe(audio_url)
