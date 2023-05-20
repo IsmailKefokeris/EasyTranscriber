@@ -18,7 +18,6 @@ class InitWhisperThread(QThread):
     def run(self):
         print("RUNNING THREAD")
         self.parent.statusbar.showMessage("Initiating Whisper Model....Setting Up Transcriber")
-        QApplication.processEvents()
         self.parent.whisper = FasterWhisperFunctions(self.model)
         self.parent.statusbar.showMessage("Transcriber Setup! Ready for Use!")
         self.parent.transcribeBtn.setEnabled(True)
