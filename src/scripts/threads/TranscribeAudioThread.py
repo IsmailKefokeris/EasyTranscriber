@@ -19,47 +19,55 @@ class TranscribeAudioThread(QThread):
         self.parent = parent
 
     def run(self):
-        self.parent.transcribeBtn.setEnabled(False)
-        self.parent.browseBtn.setEnabled(False)
-
         # Get Path to Video or Audio
         url = self.parent.browseUrl.text()
 
-        directory, file_name = url.rsplit('/', 1)
-        name, extension = file_name.split('.', 1)
+        if url:
 
-        # Check if file is a video
-        if extension == "mp4":
-            url = video_to_mp3(url, name)
+            self.parent.transcribeBtn.setEnabled(False)
+            self.parent.browseBtn.setEnabled(False)
 
-        # Transcribes Audio
-        self.parent.statusbar.showMessage("Transcription in Progress, Please Wait!")
-        QApplication.processEvents()
+            directory, file_name = url.rsplit('/', 1)
+            name, extension = file_name.split('.', 1)
 
-        self.parent.curr_transcription, info = self.parent.whisper.transcribe(url)
-        self.parent.transcribed = self.parent.whisper.display_transcribed_text(self.parent.curr_transcription)
+            # Check if file is a video
+            if extension == "mp4":
+                url = video_to_mp3(url, name)
 
-        self.parent.statusbar.showMessage("Transcription Complete! Populating Display....")
-        QApplication.processEvents()
+            # Transcribes Audio
+            self.parent.statusbar.showMessage("Transcription in Progress, Please Wait!")
+            QApplication.processEvents()
 
-        # Clear all previous Items if any
-        self.parent.displayTranscript.clear()
+            self.parent.curr_transcription, info = self.parent.whisper.transcribe(url)
+            self.parent.transcribed = self.parent.whisper.display_transcribed_text(self.parent.curr_transcription)
 
-        self.display_audio()
-        
-        self.parent.statusbar.showMessage("Text Displayed!")
+            self.parent.statusbar.showMessage("Transcription Complete! Populating Display....")
+            QApplication.processEvents()
 
-        # Deletes the file at the end if it is an mp4 file converted
-        if extension == "mp4":
-            os.remove(url)
-        
-        self.parent.browseBtn.setEnabled(True)
-        self.parent.transcribeBtn.setEnabled(True)
+            # Clear all previous Items if any
+            self.parent.displayTranscript.clear()
 
-        self.parent.loadingLabel.setMovie(None)
-        self.parent.loadingLabel = None
+            self.display_audio()
+            
+            self.parent.statusbar.showMessage("Text Displayed!")
 
-        QCoreApplication.processEvents() 
+            # Deletes the file at the end if it is an mp4 file converted
+            if extension == "mp4":
+                os.remove(url)
+            
+            self.parent.browseBtn.setEnabled(True)
+            self.parent.transcribeBtn.setEnabled(True)
+
+            # Removing Loading animation
+            self.parent.loadingLabel.clear()
+            QCoreApplication.processEvents()
+        else:
+            self.parent.statusbar.showMessage("No Audio or Video File Detected, Use Browse to pick one!")
+
+            # Removing Loading animation
+            self.parent.loadingLabel.clear()
+            QCoreApplication.processEvents()
+            
 
     def display_audio(self):
         # Displays Audio
@@ -79,4 +87,5 @@ class TranscribeAudioThread(QThread):
 
     
     def stop(self):
+        self.parent.loadingLabel.clear()
         self.terminate()

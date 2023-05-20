@@ -52,6 +52,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     # Function to setup Whisper
     def start_init_whisper(self):
         model = self.modelChosen.currentIndex()
+        self.loading_animation()
+
         self.load_model_thread = InitWhisperThread(model, self)
         self.load_model_thread.start()
 
@@ -90,7 +92,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.statusbar.showMessage("Setup Transcriber First")
         return False
 
-    
+    # Cheat Loading Animation Using a GIF
     def loading_animation(self, state = "start"):
         if state == "start":
             self.loading_movie = QMovie(r"src\assets\images\gif\Iphone-spinner-2.gif")
@@ -99,8 +101,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             return True
         
         self.loading_movie.stop()
-        self.loadingLabel.setMovie(None)
-        self.loadingLabel = None
+        self.loadingLabel.clear()
         return True
 
     def closeEvent(self, event):

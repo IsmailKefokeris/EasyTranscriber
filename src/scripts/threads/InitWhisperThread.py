@@ -22,5 +22,10 @@ class InitWhisperThread(QThread):
         self.parent.statusbar.showMessage("Transcriber Setup! Ready for Use!")
         self.parent.transcribeBtn.setEnabled(True)
 
+        # Removing Loading animation
+        self.parent.loadingLabel.clear()
+        QCoreApplication.processEvents()
+
     def stop(self):
+        self.parent.loadingLabel.clear()
         self.terminate()
