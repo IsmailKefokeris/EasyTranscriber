@@ -65,6 +65,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     
     # Function to save the transcribed text into srt (Subtitle File)
     def save_file(self):
+        # Needs fixing must include ,000 at the end of all timestamps
         self.statusbar.showMessage("Selecting File Location")
 
         fname = QFileDialog.getSaveFileName(self, "Select Where you want to Save your file", "F:\EasyTranscriber", "SubRip (*.srt)")

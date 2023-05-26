@@ -18,15 +18,27 @@ class FasterWhisperFunctions():
         segments, info = self.model.transcribe(audio_url, beam_size=5)
 
         return segments, info
-    
+
+    def format_time(self, time):
+        time = datetime.timedelta(seconds=time)
+
+        # Extract the components from the timedelta object
+        hours = time // datetime.timedelta(hours=1)
+        minutes = (time // datetime.timedelta(minutes=1)) % 60
+        seconds = (time // datetime.timedelta(seconds=1)) % 60
+        milliseconds = (time // datetime.timedelta(milliseconds=1)) % 1000
+
+        formatted_time = "{:02d}:{:02d}:{:02d},{:03d}".format(hours, minutes, seconds, milliseconds)
+
+        return formatted_time
     
     def display_transcribed_text(self, transcribed, print_text=False):
         text = []
         
         for segment in transcribed:
-            start = datetime.timedelta(seconds=int(segment.start))
+            start = self.format_time(segment.start)
             
-            end = datetime.timedelta(seconds=int(segment.end))
+            end = self.format_time(segment.end)
 
             main_body = segment.text
             # text.append(f"{start},:,{end}, - , {segment['text']}")
@@ -35,6 +47,7 @@ class FasterWhisperFunctions():
         return text
 
     def save_as_srt(self, transcribed, file_path):
+        # Needs fixing must include ,000 at the end of all timestamps
         with open(file_path, "w") as file:
             cnt = 0
             for index in range(transcribed.count()):
